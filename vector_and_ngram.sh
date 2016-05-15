@@ -17,6 +17,8 @@ INPUT=$HOME/load_exp/input/needExtend_a
 LINK_RESULT=link_result/link_result
 RESULT=restore/restore_vector_and_ngram_${CAL_TYPE}_${VECTOR_PARA}_${NGRAM_TYPE}
 
+MARK=right_rate/mark # 缩略语类型
+
 EXTEND_DIC=$HOME/load_exp/dic/extendDic.txt
 COMBOS_DIC=$HOME/load_exp/dic/combos.txt
 STATIC_DIC=$HOME/load_exp/dic/staticDic.txt
@@ -24,7 +26,7 @@ STATIC_DIC=$HOME/load_exp/dic/staticDic.txt
 echo $VECTOR_NGRAM $INPUT $LM $WORDS_VECTOR $NGRAM_TYPE $CAL_TYPE $NBEST $EXTEND_DIC $COMBOS_DIC $STATIC_DIC $V_N_RESULT
 $VECTOR_NGRAM $INPUT $LM $WORDS_VECTOR $NGRAM_TYPE $CAL_TYPE $NBEST $EXTEND_DIC $COMBOS_DIC $STATIC_DIC $V_N_RESULT
 
-$RIGHT_RATE $ANSWER $V_N_RESULT
+$RIGHT_RATE $ANSWER $V_N_RESULT $MARK
 $LINK_RESULT $INPUT $V_N_RESULT > $RESULT
 
 rm $V_N_RESULT

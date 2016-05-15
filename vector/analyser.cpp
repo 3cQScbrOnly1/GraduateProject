@@ -148,12 +148,15 @@ bool analyser::get_extends(string short_words,vector<vector<string> >& temp_exte
 
 void analyser::analyse_sentence_by_lm(string input)
 {
+	vector<string> sentence;
 	split(sentence,input,is_any_of(" "));
 	for(int i=0;i<sentence.size();i++)
 	{
+		// 是否为缩略语
 		if(is_short_words(sentence[i]))
 		{
 			string context[3];
+			// 获得上下文
 			for(int j=0;j<3;j++)
 			{
 				remove_note(sentence[i+j-1],context[j]);
@@ -194,14 +197,6 @@ void analyser::analyse_sentence_by_lm(string input)
 			{
 				result<<"NULL"<<endl;
 			}
-			/*
-			for(vector<vector<string> >::iterator vv_it=candidates.begin();vv_it!=candidates.end();vv_it++)
-			{
-				for(vector<string>::iterator v_it=vv_it->begin();v_it!=vv_it->end();v_it++)
-					cout<<*(v_it)<<" ";
-				cout<<endl;
-			}
-			*/
 		}
 	}
 }

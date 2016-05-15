@@ -34,7 +34,7 @@ void vocab::load_vector(string vector_path)
 	vector_file.close();
 	cout<<"load vector ok"<<endl;
 }
-
+/*
 double vocab::words_dis(string word1,string word2)
 {
 	map<string,vector<double> >::iterator it_word1=vocab_data.find(word1);
@@ -44,6 +44,7 @@ double vocab::words_dis(string word1,string word2)
 	else
 		return cos_dis(it_word1->second,it_word2->second);
 }
+*/
 
 double vocab::dis(vector<double> a , vector<double> b)
 {
@@ -80,7 +81,7 @@ double vocab::get_len(vector<double> a)
 	len=sqrt(len);
 	return len;
 }
-
+/*
 void vocab::get_words_cache(vector<vector<string> > temp_extends,map<string,vector<double> > &cache)
 {
 	for(int i=0;i<temp_extends.size();i++)
@@ -91,7 +92,7 @@ void vocab::get_words_cache(vector<vector<string> > temp_extends,map<string,vect
 				cache.insert(*it);
 		}
 }
-
+*/
 void vocab::add_vectors(vector<vector<double> > data,vector<double>& result)
 {
 	result.clear();

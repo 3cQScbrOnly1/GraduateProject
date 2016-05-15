@@ -11,7 +11,6 @@ class analyser
 {
 	private:
 		//lm the_lm;
-	  	vector<string> sentence;
 		ofstream result;
 		vocab the_vocab;
 
